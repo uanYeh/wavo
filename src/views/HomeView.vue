@@ -1,55 +1,52 @@
 <template>
-  <header>
-    <nav class="navbar navbar-expand-lg container-xxl py-2 p-lg-3">
-      <div class="container-fluid d-flex">
-        <div class="d-flex justify-content-between align-items-center container-fluid mb-2 mb-lg-0">
-          <a class="navbar-brand" href="#"
-            ><img src="@/assets/images/logo-dark.svg" alt="Wavo" style="width: 190px"
-          /></a>
-          <button
-            class="navbar-toggler rounded-0"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link link-hover dropdown-toggle fw-semibold fs-6"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Product
-                </a>
-                <ul class="dropdown-menu rounded-0">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-semibold fs-6" aria-current="page" href="#">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-semibold fs-6" href="#">About</a>
-              </li>
-              <li class="nav-item d-lg-none">
-                <a class="nav-link fw-semibold fs-6" href="#">FAQ</a>
-              </li>
-            </ul>
-          </div>
+  <header class="bg-white">
+    <nav class="container-xl navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="@/assets/images/logo-dark.svg" alt="Wavo" style="width: 190px"
+        /></a>
+        <button
+          class="navbar-toggler rounded-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="link-hover nav-link dropdown-toggle fw-semibold fs-6"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Product
+              </a>
+              <ul class="dropdown-menu rounded-0">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="link-hover nav-link fw-semibold fs-6" aria-current="page" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="link-hover nav-link fw-semibold fs-6" href="#">About</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="link-hover nav-link fw-semibold fs-6" href="#">FAQ</a>
+            </li>
+          </ul>
         </div>
-
-        <div class="search-container px-3 py-1 py-md-1 w-100 w-md-50">
+        <div class="position-relative z-1 search-container px-3 py-1 py-md-1">
           <form class="d-flex align-items-center" role="search">
             <i class="bi bi-search"></i>
             <input
@@ -60,14 +57,28 @@
             />
           </form>
         </div>
+        <a
+          class="cart-num position-relative mx-3"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <i class="bi bi-bag fs-4 text-dark"></i>
+          <span
+            class="position-absolute translate-middle badge rounded-pill bg-danger d-flex justify-content-center align-items-center text-white fw-bolder"
+          >
+            13
+          </span>
+        </a>
       </div>
     </nav>
-    <section class="couponsBar text-center bg-warning text-dark">
-      <p class="mb-0 py-2 fs-6 fw-semibold">
-        <i class="bi bi-tags-fill"></i> GET 20% OFF SPECIAL SALES IN OD 23H 58M 38S
-      </p>
-    </section>
   </header>
+  <section class="couponsBar text-center bg-warning text-dark">
+    <p class="mb-0 py-2 fs-6 fw-semibold">
+      <i class="bi bi-tags-fill"></i> GET 20% OFF SPECIAL SALES IN OD 23H 58M 38S
+    </p>
+  </section>
   <section
     class="banner d-flex align-items-center mb-5 mb-lg-8"
     :style="{
@@ -758,16 +769,24 @@
         /></a>
         <ul class="footer-nav list-unstyled d-none d-md-flex m-0">
           <li>
-            <a class="link-light text-decoration-none p-2 fw-semibold fs-6" href="">FAQ</a>
+            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
+              >FAQ</a
+            >
           </li>
           <li>
-            <a class="link-light text-decoration-none p-2 fw-semibold fs-6" href="">Delivery</a>
+            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
+              >Delivery</a
+            >
           </li>
           <li>
-            <a class="link-light text-decoration-none p-2 fw-semibold fs-6" href="">Return</a>
+            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
+              >Return</a
+            >
           </li>
           <li>
-            <a class="link-light text-decoration-none p-2 fw-semibold fs-6" href="">Contact Us</a>
+            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
+              >Contact Us</a
+            >
           </li>
         </ul>
       </div>
@@ -785,6 +804,42 @@
       </p>
     </div>
   </footer>
+  <button class="go-top" @click="scrollToTop">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- 購物車側邊欄 -->
+  <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title border-1" id="offcanvasExampleLabel">Cart (1 items)</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Some text as placeholder. In real life you can have the elements you have chosen. Like,
+        text, images, lists, etc.
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -802,6 +857,8 @@ import icon03 from "@/assets/images/icon03.svg";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Headroom from "headroom.js";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -922,6 +979,37 @@ export default {
         },
       },
     };
+  },
+  mounted() {
+    //header
+    const header = document.querySelector("header");
+    const headroom = new Headroom(header, {
+      offset: 300,
+      classes: {
+        top: "headroom--top",
+        notTop: "headroom--not-top shadow-sm",
+        pinned: "headroom--pinned",
+        unpinned: "headroom--unpinned",
+      },
+    });
+    headroom.init();
+    window.addEventListener("scroll", this.handleGoTop);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleGoTop);
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    handleGoTop() {
+      const btn = document.querySelector(".go-top");
+      if (window.scrollY > 300) {
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    },
   },
 };
 </script>
