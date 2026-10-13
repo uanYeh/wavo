@@ -1,0 +1,107 @@
+$body-color: #414141;
+$secdary-color: #545454;
+body,
+a.link-more {
+  color: $body-color;
+  text-underline-offset: 4px;
+  letter-spacing: 0.03em;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+footer {
+  .border-light {
+    border-color: #ffffff33 !important;
+  }
+}
+.search-container {
+  border-radius: 40px;
+  background-color: #efefef;
+
+  .form-control {
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+  }
+}
+.banner {
+  min-height: 35vh;
+
+  @include media-breakpoint-up(md) {
+    min-height: 80vh;
+  }
+}
+.b-banner {
+  min-height: 50vh;
+
+  @include media-breakpoint-up(lg) {
+    min-height: 65vh;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .fs-md-1 {
+    font-size: 3.5rem !important;
+  }
+  .fs-md-2 {
+    font-size: 2rem !important;
+  }
+  .fs-md-3 {
+    font-size: 1.75rem !important;
+  }
+  .fs-md-4 {
+    font-size: 1.5rem !important;
+  }
+  .fs-md-5 {
+    font-size: 1.25rem !important;
+  }
+  .fs-md-6 {
+    font-size: 1rem !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .w-md-50 {
+    width: 50% !important;
+  }
+  .w-md-80 {
+    width: 80% !important;
+  }
+  .w-md-100 {
+    width: 100% !important;
+  }
+}
+.newproduct-content {
+  @include media-breakpoint-up(xs) {
+    width: 100%;
+  }
+  @include media-breakpoint-up(md) {
+    width: 66.66%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 80%;
+  }
+}
+a.link-hover {
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}

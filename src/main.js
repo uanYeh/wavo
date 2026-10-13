@@ -1,14 +1,28 @@
-import './assets/main.css'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import App from "./App.vue";
+import router from "./router";
 
-import App from './App.vue'
-import router from './router'
+import "../stylesheets/all.scss";
 
-const app = createApp(App)
+import "bootstrap/js/dist/alert";
+import "bootstrap/js/dist/button";
+import "bootstrap/js/dist/carousel";
+import "bootstrap/js/dist/collapse";
+import "bootstrap/js/dist/dropdown";
+import "bootstrap/js/dist/modal";
+import "bootstrap/js/dist/offcanvas";
+import "bootstrap/js/dist/popover";
+import "bootstrap/js/dist/scrollspy";
+import "bootstrap/js/dist/tab";
+import "bootstrap/js/dist/toast";
+import "bootstrap/js/dist/tooltip";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 
-app.use(createPinia())
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(createPinia());
+app.use(router);
+
+app.mount("#app");
