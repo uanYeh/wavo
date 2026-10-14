@@ -103,13 +103,13 @@ export default {
     };
   },
   mounted() {
-    // const seen = localStorage.getItem("couponSeen");
-    // if (!seen) {
-    const modal = new Modal(this.$refs.couponModal);
-    setTimeout(() => {
-      modal.show();
-    }, 500);
-    // }
+    const seen = localStorage.getItem("couponSeen");
+    if (!seen) {
+      const modal = new Modal(this.$refs.couponModal);
+      setTimeout(() => {
+        modal.show();
+      }, 500);
+    }
   },
   methods: {
     copyCoupon() {

@@ -6,9 +6,9 @@
   <header class="bg-white">
     <nav class="container-xl navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img src="@/assets/images/logo-dark.svg" alt="Wavo" style="width: 190px"
-        /></a>
+        <RouterLink class="navbar-brand" to="/">
+          <img src="@/assets/images/logo-dark.svg" alt="Wavo" style="width: 190px" />
+        </RouterLink>
         <button
           class="navbar-toggler rounded-0"
           type="button"
@@ -33,10 +33,20 @@
                 Product
               </a>
               <ul class="dropdown-menu rounded-0">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><RouterLink class="dropdown-item" to="/products">All Products</RouterLink></li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/products?category=shoes">Shoes</RouterLink>
+                </li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/products?category=apparel"
+                    >Apparel</RouterLink
+                  >
+                </li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/products?category=accessories"
+                    >Accessories</RouterLink
+                  >
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -64,7 +74,7 @@
         <a href="#" class="favorite ms-3 d-none d-lg-block">
           <i class="bi bi-heart fs-4 text-dark"></i>
         </a>
-        <CartListOffcanvas />
+        <CartOffcanvas />
       </div>
     </nav>
   </header>
@@ -75,10 +85,10 @@
 <script>
 import Headroom from "headroom.js";
 import TheCountdown from "@/components/ui/TheCountdown.vue";
-import CartListOffcanvas from "@/components/CartListOffcanvas.vue";
+import CartOffcanvas from "@/components/CartOffcanvas.vue";
 
 export default {
-  components: { TheCountdown, CartListOffcanvas },
+  components: { TheCountdown, CartOffcanvas },
   mounted() {
     const header = document.querySelector("header");
     const headroom = new Headroom(header, {
