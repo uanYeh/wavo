@@ -32,17 +32,27 @@
           <p class="mx-2 fs-4 fw-semibold mb-0">Filter</p>
         </div>
         <ul class="list-unstyled mx-0 me-2">
-          <li class="border-bottom p-2">
-            <a href="#" class="text-dark text-decoration-none d-block active">All</a>
+          <li
+            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
+          >
+            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">All</a>
           </li>
-          <li class="border-bottom p-2">
-            <a href="#" class="text-dark text-decoration-none d-block">Shoes</a>
+          <li
+            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
+          >
+            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">Shoes</a>
           </li>
-          <li class="border-bottom p-2">
-            <a href="#" class="text-dark text-decoration-none d-block">Apparel</a>
+          <li
+            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
+          >
+            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">Apparel</a>
           </li>
-          <li class="border-bottom p-2">
-            <a href="#" class="text-dark text-decoration-none d-block">Accessories</a>
+          <li
+            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
+          >
+            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
+              >Accessories</a
+            >
           </li>
         </ul>
       </aside>
@@ -62,7 +72,7 @@
             </select>
           </div>
         </div>
-        <div class="row px-0 g-3 gy-4 mb-6">
+        <div class="row px-0 g-3 gy-4 mb-4 mb-lg-6">
           <div class="col-6 col-md-4 col-lg-3" v-for="item in products" :key="item.id">
             <ProductCard :product="item" />
           </div>
