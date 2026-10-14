@@ -1,84 +1,6 @@
 <template>
-  <header class="bg-white">
-    <nav class="container-xl navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img src="@/assets/images/logo-dark.svg" alt="Wavo" style="width: 190px"
-        /></a>
-        <button
-          class="navbar-toggler rounded-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a
-                class="link-hover nav-link dropdown-toggle fw-semibold fs-6"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Product
-              </a>
-              <ul class="dropdown-menu rounded-0">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="link-hover nav-link fw-semibold fs-6" aria-current="page" href="#">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">About</a>
-            </li>
-            <li class="nav-item d-lg-none">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">FAQ</a>
-            </li>
-          </ul>
-        </div>
-        <div class="position-relative z-1 search-container px-3 py-1 py-md-1">
-          <form class="d-flex align-items-center" role="search">
-            <i class="bi bi-search"></i>
-            <input
-              class="form-control me-1 me-md-2 border-0"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-        <a
-          class="cart-num position-relative mx-3"
-          data-bs-toggle="offcanvas"
-          href="#offcanvasExample"
-          role="button"
-          aria-controls="offcanvasExample"
-        >
-          <i class="bi bi-bag fs-4 text-dark"></i>
-          <span
-            class="position-absolute translate-middle badge rounded-pill bg-danger d-flex justify-content-center align-items-center text-white fw-bolder"
-          >
-            13
-          </span>
-        </a>
-      </div>
-    </nav>
-  </header>
-  <section class="couponsBar text-center bg-warning text-dark">
-    <p class="mb-0 py-2 fs-6 fw-semibold">
-      <i class="bi bi-tags-fill"></i> GET 20% OFF SPECIAL SALES IN OD 23H 58M 38S
-    </p>
-  </section>
+  <TheCouponModal />
+  <TheHeader />
   <section
     class="banner d-flex align-items-center mb-5 mb-lg-8"
     :style="{
@@ -109,182 +31,10 @@
   <section class="container-lg g-3 mb-5 mb-lg-8 section-products">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold">Clearing</h2>
     <Swiper v-bind="swiperOptions">
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0 position-relative">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2 pb-4">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON2</p>
-            <a
-              href="#"
-              class="icon-cart text-end d-inline-block position-absolute z-2 bottom-0 end-0"
-              ><i class="bi bi-cart-plus-fill fs-4"></i
-            ></a>
-            <a href="/product/1" class="stretched-link z-1"></a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div> </SwiperSlide
-      ><SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div> </SwiperSlide
-      ><SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
+      <SwiperSlide v-for="item in products" :key="item.id">
+        <ProductCard :product="item" />
       </SwiperSlide>
     </Swiper>
-    <!-- <div class="row g-3">
-      <div class="col">
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899 <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">$899</p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">$899</p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">$899</p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">$899</p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </section>
   <section class="section-feature bg-light py-5 py-md-8 mb-5 mb-lg-6">
     <div class="container-lg col-12 col-lg-8">
@@ -412,133 +162,16 @@
   <section class="container-lg section-newproduct g-3 mb-5 mb-lg-8">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold d-md-none">News Product</h2>
     <div class="d-flex gap-0 gap-md-3">
-      <div class="area-img flex-fill">
+      <div class="area-img flex-fill position-relative">
         <img :src="areaImg" />
+        <div class="position-absolute top-0 end-50 fs-3 p-3 pe-0 fw-bolder text-white z-2">
+          News Product
+        </div>
       </div>
       <div class="newproduct-content">
         <Swiper v-bind="swiper2Options">
-          <SwiperSlide>
-            <div class="card product-card border-0 rounded-0 position-relative">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2 pb-4">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON2</p>
-                <a
-                  href="#"
-                  class="icon-cart text-end d-inline-block position-absolute z-2 bottom-0 end-0"
-                  ><i class="bi bi-cart-plus-fill fs-4"></i
-                ></a>
-                <a href="/product/1" class="stretched-link z-1"></a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="card product-card border-0 rounded-0">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-                <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="card product-card border-0 rounded-0">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-                <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="card product-card border-0 rounded-0">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-                <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-              </div>
-            </div> </SwiperSlide
-          ><SwiperSlide>
-            <div class="card product-card border-0 rounded-0">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-                <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-              </div>
-            </div> </SwiperSlide
-          ><SwiperSlide>
-            <div class="card product-card border-0 rounded-0">
-              <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-              <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">
-                sale
-              </p>
-              <div class="card-body p-1 pt-2">
-                <p class="mb-2 fs-5 fw-medium">
-                  $899
-                  <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-                </p>
-                <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-                  Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge
-                  blue-green)
-                </p>
-                <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-                <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-              </div>
-            </div>
+          <SwiperSlide v-for="item in products" :key="item.id">
+            <ProductCard :product="item" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -547,110 +180,8 @@
   <section class="container-lg g-3 mb-5 mb-lg-8">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold">Most Popular</h2>
     <Swiper v-bind="swiperOptions">
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0 position-relative">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2 pb-4">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON2</p>
-            <a
-              href="#"
-              class="icon-cart text-end d-inline-block position-absolute z-2 bottom-0 end-0"
-              ><i class="bi bi-cart-plus-fill fs-4"></i
-            ></a>
-            <a href="/product/1" class="stretched-link z-1"></a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div> </SwiperSlide
-      ><SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div> </SwiperSlide
-      ><SwiperSlide>
-        <div class="card product-card border-0 rounded-0">
-          <img :src="photoImg" class="card-img-top rounded-0" alt="..." />
-          <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
-          <div class="card-body p-1 pt-2">
-            <p class="mb-2 fs-5 fw-medium">
-              $899
-              <span class="fs-6 text-light-emphasis text-decoration-line-through">$1200</span>
-            </p>
-            <p class="card-text mb-2 fs-6 fw-medium content-truncate">
-              Prescription swimming goggles XBASE 200-600 degrees - Black (nose bridge blue-green)
-            </p>
-            <p class="card-brands mb-2 fs-7 fw-semibold">DECATHLON</p>
-            <a href="#" class="d-block text-end link-more fw-medium fs-6">More</a>
-          </div>
-        </div>
+      <SwiperSlide v-for="item in products" :key="item.id">
+        <ProductCard :product="item" />
       </SwiperSlide>
     </Swiper>
   </section>
@@ -671,36 +202,6 @@
         </SwiperSlide>
       </Swiper>
       <!-- <div class="row">
-        <div class="card border-0 card-reviews bg-light">
-          <div class="card-body">
-            <div class="fs-5">★★★★★</div>
-            <p class="fs-4 fw-medium mb-3">Lovely winter outfit</p>
-            <p class="card-text mb-4 fs-6 fw-medium content-truncate truncate-3">
-              Great quality onesie with matching pants. Has a good amount of stretch to grow with
-              the baby.
-            </p>
-          </div>
-        </div>
-        <div class="card border-0 card-reviews bg-light">
-          <div class="card-body">
-            <div class="fs-5">★★★★★</div>
-            <p class="fs-4 fw-medium mb-3">Lovely winter outfit</p>
-            <p class="card-text mb-4 fs-6 fw-medium content-truncate truncate-3">
-              Great quality onesie with matching pants. Has a good amount of stretch to grow with
-              the baby.
-            </p>
-          </div>
-        </div>
-        <div class="card border-0 card-reviews bg-light">
-          <div class="card-body">
-            <div class="fs-5">★★★★★</div>
-            <p class="fs-4 fw-medium mb-3">Lovely winter outfit</p>
-            <p class="card-text mb-4 fs-6 fw-medium content-truncate truncate-3">
-              Great quality onesie with matching pants. Has a good amount of stretch to grow with
-              the baby.
-            </p>
-          </div>
-        </div>
         <div class="card border-0 card-reviews bg-light">
           <div class="card-body">
             <div class="fs-5">★★★★★</div>
@@ -804,9 +305,6 @@
       </p>
     </div>
   </footer>
-  <button class="go-top" @click="scrollToTop">
-    <i class="bi bi-arrow-up"></i>
-  </button>
   <!-- 購物車側邊欄 -->
   <div
     class="offcanvas offcanvas-end"
@@ -857,7 +355,10 @@ import icon03 from "@/assets/images/icon03.svg";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Headroom from "headroom.js";
+
+import TheHeader from "@/components/TheHeader.vue";
+import ProductCard from "@/components/ProductCard.vue";
+import TheCouponModal from "@/components/ui/TheCouponModal.vue";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -866,6 +367,9 @@ import "swiper/css/autoplay";
 
 export default {
   components: {
+    TheHeader,
+    ProductCard,
+    TheCouponModal,
     Swiper,
     SwiperSlide,
   },
@@ -880,6 +384,62 @@ export default {
       icon02,
       icon03,
       brands: [brandsIcon01, brandsIcon02, brandsIcon03],
+      products: [
+        {
+          id: 1,
+          title: "Ultra Boost Running Shoes Pro Edition",
+          text: "Engineered for long-distance runners, featuring ultra-lightweight cushioning technology that delivers exceptional rebound and comfort across all surfaces.",
+          price: 3200,
+          origin_price: 4500,
+          category: "Ultra Boost Running",
+          imageUrl: photoImg,
+        },
+        {
+          id: 2,
+          title: "Lightweight Sport Performance Jacket",
+          text: "A breathable, wind-resistant jacket with water-repellent fabric, designed to keep you performing at your best whether on a morning run or intense training session.",
+          price: 2800,
+          origin_price: 3800,
+          category: "Apparel",
+          imageUrl: photoImg,
+        },
+        {
+          id: 3,
+          title: "High Compression Training Tights",
+          text: "High-elasticity compression design promotes blood circulation, reduces muscle fatigue, and enhances both athletic performance and post-workout recovery.",
+          price: 1500,
+          origin_price: 2000,
+          category: "Apparel",
+          imageUrl: photoImg,
+        },
+        {
+          id: 4,
+          title: "All Terrain Trail Running Shoes",
+          text: "Reinforced grip outsole adapts to gravel, mud, and rugged terrain, keeping your stride stable and confident on every trail running adventure.",
+          price: 4200,
+          origin_price: 5500,
+          category: "Shoes",
+          imageUrl: photoImg,
+        },
+        {
+          id: 5,
+          title: "Waterproof Multi-Pocket Sports Bag",
+          text: "Durable waterproof material paired with a versatile multi-pocket layout, making it easy to organize your gear for the gym, trails, or any outdoor activity.",
+          price: 1800,
+          origin_price: 2500,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
+        {
+          id: 6,
+          title: "Breathable UV Protection Running Cap",
+          text: "Quick-dry, UV-blocking fabric shields you from the sun while keeping you cool and comfortable during outdoor workouts in any weather condition.",
+          price: 850,
+          origin_price: 1200,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
+      ],
       reviews: [
         {
           id: 1,
@@ -979,37 +539,6 @@ export default {
         },
       },
     };
-  },
-  mounted() {
-    //header
-    const header = document.querySelector("header");
-    const headroom = new Headroom(header, {
-      offset: 300,
-      classes: {
-        top: "headroom--top",
-        notTop: "headroom--not-top shadow-sm",
-        pinned: "headroom--pinned",
-        unpinned: "headroom--unpinned",
-      },
-    });
-    headroom.init();
-    window.addEventListener("scroll", this.handleGoTop);
-  },
-  beforeUnmount() {
-    window.removeEventListener("scroll", this.handleGoTop);
-  },
-  methods: {
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    handleGoTop() {
-      const btn = document.querySelector(".go-top");
-      if (window.scrollY > 300) {
-        btn.classList.add("show");
-      } else {
-        btn.classList.remove("show");
-      }
-    },
   },
 };
 </script>

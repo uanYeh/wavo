@@ -159,11 +159,20 @@ body {
 }
 
 .cart-num {
+  position: absolute;
+  top: 25px;
+  right: 70px;
+
+  @include media-breakpoint-up(lg) {
+    position: static;
+    top: unset;
+    right: unset;
+  }
   span {
     width: 16px;
     height: 16px;
-    top: 11px;
-    left: 28px;
+    top: 0px;
+    left: 26px;
     padding: 10px;
     font-size: 12px;
   }
@@ -193,4 +202,9 @@ body {
   &.show {
     opacity: 1;
   }
+}
+
+.icon-cart:focus {
+  outline: none;
+  box-shadow: none;
 }
