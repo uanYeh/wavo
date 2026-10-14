@@ -83,7 +83,7 @@
             <ProductCard :product="item" />
           </div>
         </div>
-        <PaginationComponent />
+        <ThePagination />
       </main>
     </div>
   </div>
@@ -96,10 +96,10 @@ import photoImg from "@/assets/images/photoImg.jpg";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import ProductCard from "@/components/ProductCard.vue";
-import PaginationComponent from "@/components/ui/PaginationComponent.vue";
+import ThePagination from "@/components/ui/ThePagination.vue";
 
 export default {
-  components: { TheHeader, TheFooter, ProductCard, PaginationComponent },
+  components: { TheHeader, TheFooter, ProductCard, ThePagination },
   data() {
     return {
       photoImg,
