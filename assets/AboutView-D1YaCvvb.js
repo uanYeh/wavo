@@ -1,0 +1,1 @@
+import{a as e,o as t,r as n,u as r}from"./index-CrUsmeHD.js";var i={},a={class:`about`};function o(n,i){return r(),t(`div`,a,[...i[0]||=[e(`h1`,null,`This is an about page`,-1)]])}var s=n(i,[[`render`,o]]);export{s as default};
