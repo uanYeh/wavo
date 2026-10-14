@@ -1,19 +1,7 @@
 <template>
   <TheHeader />
   <div class="container-xl py-3">
-    <ul class="list-unstyled d-flex fs-6">
-      <li class="px-2">
-        <RouterLink class="link-dark text-decoration-none fw-semibold" to="/">Home</RouterLink>
-      </li>
-      /
-      <li class="px-2">
-        <RouterLink class="link-dark text-decoration-none fw-semibold" to="/products"
-          >Products</RouterLink
-        >
-      </li>
-      /
-      <li class="px-2 active" aria-current="page">Shoes</li>
-    </ul>
+    <TheBreadcrumb />
 
     <div class="border p-4 mb-4 mx-2">
       <h3 class="fw-bold">ALL</h3>
@@ -97,9 +85,10 @@ import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import ProductCard from "@/components/ProductCard.vue";
 import ThePagination from "@/components/ui/ThePagination.vue";
+import TheBreadcrumb from "@/components/ui/TheBreadcrumb.vue";
 
 export default {
-  components: { TheHeader, TheFooter, ProductCard, ThePagination },
+  components: { TheHeader, TheFooter, ProductCard, ThePagination, TheBreadcrumb },
   data() {
     return {
       photoImg,

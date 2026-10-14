@@ -18,19 +18,40 @@
   z-index: 2;
 }
 .bi-cart-plus-fill {
-  color: #3e3e3e;
-  padding: 8px 9px;
-  border-radius: 50%;
-  transition:
-    color 0.3s,
-    background-color 0.3s;
+  padding: 2px;
+  @include media-breakpoint-up(lg) {
+    color: #3e3e3e;
+    padding: 8px 9px;
+    border-radius: 50%;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
+  }
 }
 .icon-cart {
   margin-bottom: 5px;
+  @include media-breakpoint-up(lg) {
+  }
 }
 .icon-cart:hover .bi-cart-plus-fill {
-  color: #fff;
-  background-color: #0e0ea8;
+  @include media-breakpoint-up(lg) {
+    color: #fff;
+    background-color: #0e0ea8;
+  }
+}
+
+.icon-cart:focus {
+  outline: none;
+  box-shadow: none;
+}
+.icon-cart {
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background-color: #b76f6f;
+    color: #fff;
+  }
 }
 
 .bg-cover {
@@ -131,5 +152,68 @@
   .border-lg-0 {
     border: none !important;
     border-bottom: 1px solid #dee2e6 !important;
+  }
+}
+
+// productDetail
+.nav-tabs .nav-link {
+  background-color: #d9d9d9;
+  color: #fff;
+  font-weight: 700;
+}
+.nav-tabs .nav-link.active {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #d9d9d9;
+  }
+}
+.nav-tabs {
+  @include media-breakpoint-down(md) {
+    align-items: stretch;
+
+    .nav-item {
+      flex: 1;
+      display: flex;
+    }
+    .nav-link {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+  }
+}
+
+.theme-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: $border-color;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: $border-color;
   }
 }

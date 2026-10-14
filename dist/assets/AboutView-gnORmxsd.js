@@ -1,0 +1,1 @@
+import{b as e,c as t,f as n,h as r}from"./index--Cqu60kq.js";var i={},a={class:`about`};function o(t,i){return e(),r(`div`,a,[...i[0]||=[n(`h1`,null,`This is an about page`,-1)]])}var s=t(i,[[`render`,o]]);export{s as default};
