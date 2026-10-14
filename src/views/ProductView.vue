@@ -27,34 +27,40 @@
       <!-- 左側篩選 -->
 
       <aside class="col-lg-2 mb-4 mb-lg-0">
-        <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-filter-circle fs-4"></i>
-          <p class="mx-2 fs-4 fw-semibold mb-0">Filter</p>
+        <div class="sticky-top" style="top: 20px">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-filter-circle fs-4"></i>
+            <p class="mx-2 fs-4 fw-semibold mb-0">Filter</p>
+          </div>
+          <ul class="list-unstyled mx-0 me-2">
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2mxlg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">All</a>
+            </li>
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2 m-lg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">Shoes</a>
+            </li>
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2 m-lg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
+                >Apparel</a
+              >
+            </li>
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2 m-lg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
+                >Accessories</a
+              >
+            </li>
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2 m-lg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
+                >Accessories</a
+              >
+            </li>
+            <li class="border border-lg-0 p-2 d-inline-block d-lg-block me-2 mb-2 m-lg-0">
+              <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
+                >Accessories</a
+              >
+            </li>
+          </ul>
         </div>
-        <ul class="list-unstyled mx-0 me-2">
-          <li
-            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
-          >
-            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">All</a>
-          </li>
-          <li
-            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
-          >
-            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">Shoes</a>
-          </li>
-          <li
-            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
-          >
-            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block">Apparel</a>
-          </li>
-          <li
-            class="border border-lg-0 border-lg-bottom p-2 d-inline-block d-lg-block me-2 mx-lg-0"
-          >
-            <a href="#" class="text-dark text-decoration-none d-inline-block d-lg-block"
-              >Accessories</a
-            >
-          </li>
-        </ul>
       </aside>
 
       <!-- 右側商品列表 -->

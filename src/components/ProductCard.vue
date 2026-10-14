@@ -1,6 +1,8 @@
 <template>
   <div class="card product-card border-0 rounded-0 position-relative">
-    <img :src="product.imageUrl" class="card-img-top rounded-0" :alt="product.title" />
+    <div class="photo-img">
+      <img :src="product.imageUrl" class="card-img-top rounded-0" :alt="product.title" />
+    </div>
     <p class="position-absolute bg-warning px-2 py-0 mt-1 text-uppercase fw-semibold">sale</p>
     <div class="card-body p-1 pt-2 pb-4">
       <p class="mb-2 fs-5 fw-medium">
