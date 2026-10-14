@@ -50,7 +50,12 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="link-hover nav-link fw-semibold fs-6" aria-current="page" href="#">News</a>
+              <RouterLink
+                class="link-hover nav-link fw-semibold fs-6"
+                aria-current="page"
+                to="/news"
+                >News</RouterLink
+              >
             </li>
             <li class="nav-item">
               <a class="link-hover nav-link fw-semibold fs-6" href="#">About</a>
