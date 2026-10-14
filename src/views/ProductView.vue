@@ -1,33 +1,85 @@
 <template>
   <TheHeader />
-  <div class="container-xl py-2">
-    <ul class="path">
-      <li class="breadcrumb-item"><RouterLink to="/">Home</RouterLink></li>
-      <li class="breadcrumb-item"><RouterLink to="/products">Products</RouterLink></li>
-      <li class="breadcrumb-item active" aria-current="page">Shoes</li>
+  <div class="container-xl py-3">
+    <ul class="list-unstyled d-flex fs-6">
+      <li class="px-2">
+        <RouterLink class="link-dark text-decoration-none fw-semibold" to="/">Home</RouterLink>
+      </li>
+      /
+      <li class="px-2">
+        <RouterLink class="link-dark text-decoration-none fw-semibold" to="/products"
+          >Products</RouterLink
+        >
+      </li>
+      /
+      <li class="px-2 active" aria-current="page">Shoes</li>
     </ul>
-    <div class="row">
+
+    <div class="border p-4 mb-4 mx-2">
+      <h3 class="fw-bold">ALL</h3>
+      <p class="fs-6">
+        Explore our complete range of sports products and equipment now! Decathlon Taiwan offers
+        thousands of items across more than 80 sports, including hiking, camping, running, and
+        fitness. Shop now!
+      </p>
+    </div>
+    <div class="row px-3">
       <!-- 左側篩選 -->
-      <aside class="col-lg-3 mb-4 mb-lg-0">
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">All</a>
+
+      <aside class="col-lg-2 mb-4 mb-lg-0">
+        <div class="d-flex align-items-center mb-3">
+          <i class="bi bi-filter-circle fs-4"></i>
+          <p class="mx-2 fs-4 fw-semibold mb-0">Filter</p>
+        </div>
+        <ul class="list-unstyled mx-0 me-2">
+          <li class="border-bottom p-2">
+            <a href="#" class="text-dark text-decoration-none d-block active">All</a>
           </li>
-          <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">Shoes</a>
+          <li class="border-bottom p-2">
+            <a href="#" class="text-dark text-decoration-none d-block">Shoes</a>
           </li>
-          <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">Apparel</a>
+          <li class="border-bottom p-2">
+            <a href="#" class="text-dark text-decoration-none d-block">Apparel</a>
           </li>
-          <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">Accessories</a>
+          <li class="border-bottom p-2">
+            <a href="#" class="text-dark text-decoration-none d-block">Accessories</a>
           </li>
         </ul>
       </aside>
 
       <!-- 右側商品列表 -->
-      <main class="col-lg-9">
-        <div class="row row-cols-2 row-cols-md-3 g-4">商品</div>
+      <main class="products col-lg-10 mb-4 px-lg-0">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span>41 items</span>
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="mx-2">Sort by:</span>
+            <select class="form-select w-auto rounded-0">
+              <option selected>select</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="name-desc">Name: Z to A</option>
+            </select>
+          </div>
+        </div>
+        <div class="row px-0 g-3 gy-4 mb-6">
+          <div class="col-6 col-md-4 col-lg-3" v-for="item in products" :key="item.id">
+            <ProductCard :product="item" />
+          </div>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
       </main>
     </div>
   </div>
@@ -35,10 +87,74 @@
 </template>
 
 <script>
+import photoImg from "@/assets/images/photoImg.jpg";
+
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import ProductCard from "@/components/ProductCard.vue";
 
 export default {
-  components: { TheHeader, TheFooter },
+  components: { TheHeader, TheFooter, ProductCard },
+  data() {
+    return {
+      photoImg,
+      products: [
+        {
+          id: 1,
+          title: "Ultra Boost Running Shoes Pro Edition",
+          text: "Engineered for long-distance runners, featuring ultra-lightweight cushioning technology that delivers exceptional rebound and comfort across all surfaces.",
+          price: 3200,
+          origin_price: 4500,
+          category: "Ultra Boost Running",
+          imageUrl: photoImg,
+        },
+        {
+          id: 2,
+          title: "Lightweight Sport Performance Jacket",
+          text: "A breathable, wind-resistant jacket with water-repellent fabric, designed to keep you performing at your best whether on a morning run or intense training session.",
+          price: 2800,
+          origin_price: 3800,
+          category: "Apparel",
+          imageUrl: photoImg,
+        },
+        {
+          id: 3,
+          title: "High Compression Training Tights",
+          text: "High-elasticity compression design promotes blood circulation, reduces muscle fatigue, and enhances both athletic performance and post-workout recovery.",
+          price: 1500,
+          origin_price: 2000,
+          category: "Apparel",
+          imageUrl: photoImg,
+        },
+        {
+          id: 4,
+          title: "All Terrain Trail Running Shoes",
+          text: "Reinforced grip outsole adapts to gravel, mud, and rugged terrain, keeping your stride stable and confident on every trail running adventure.",
+          price: 4200,
+          origin_price: 5500,
+          category: "Shoes",
+          imageUrl: photoImg,
+        },
+        {
+          id: 5,
+          title: "Waterproof Multi-Pocket Sports Bag",
+          text: "Durable waterproof material paired with a versatile multi-pocket layout, making it easy to organize your gear for the gym, trails, or any outdoor activity.",
+          price: 1800,
+          origin_price: 2500,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
+        {
+          id: 6,
+          title: "Breathable UV Protection Running Cap",
+          text: "Quick-dry, UV-blocking fabric shields you from the sun while keeping you cool and comfortable during outdoor workouts in any weather condition.",
+          price: 850,
+          origin_price: 1200,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
+      ],
+    };
+  },
 };
 </script>

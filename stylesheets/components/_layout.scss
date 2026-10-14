@@ -208,3 +208,10 @@ body {
   outline: none;
   box-shadow: none;
 }
+
+//productView
+@include media-breakpoint-up(lg) {
+  .col-custom5 {
+    width: 20%;
+  }
+}
