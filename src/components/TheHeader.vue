@@ -96,17 +96,15 @@
       </div>
     </nav>
   </header>
-
   <TheCountdown />
 </template>
-
 <script>
 import Headroom from "headroom.js";
 import TheCountdown from "@/components/ui/TheCountdown.vue";
 import CartOffcanvas from "@/components/CartOffcanvas.vue";
 
 export default {
-  components: { TheCountdown, CartOffcanvas },
+  components: { CartOffcanvas, TheCountdown },
   mounted() {
     const header = document.querySelector("header");
     const headroom = new Headroom(header, {

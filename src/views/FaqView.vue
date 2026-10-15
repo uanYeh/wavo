@@ -2,7 +2,7 @@
   <TheHeader />
   <div class="container-xl py-3">
     <TheBreadcrumb />
-    <!-- <h2 class="text-center mb-3 mb-lg-4 fw-bold">News</h2> -->
+
     <main class="mb-4 mb-lg-6">
       <img :src="qaBanner" class="img-fluid w-100 mb-2 mb-lg-6" />
       <div class="container-lg position-relative">
@@ -60,7 +60,6 @@ import qaBanner from "@/assets/images/qaBanner.jpg";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheBreadcrumb from "@/components/ui/TheBreadcrumb.vue";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default {
   components: {
