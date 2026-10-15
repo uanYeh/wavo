@@ -175,6 +175,31 @@ footer {
       background-color: #fff;
     }
   }
+
+  a.link-hover {
+    position: relative;
+    text-decoration: none;
+
+    @include media-breakpoint-up(lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition:
+          width 0.3s ease,
+          left 0.3s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
 }
 
 .search-container {

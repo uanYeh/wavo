@@ -250,3 +250,23 @@
     }
   }
 }
+
+// article-content
+.article-content {
+  max-width: 1024px;
+  margin: 0 auto 230px auto;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 230px;
+  }
+}
+.sportPeoplePhoto {
+  width: 2%;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    bottom: 0px;
+    right: 300px;
+    z-index: 1;
+  }
+}

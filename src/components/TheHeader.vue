@@ -58,7 +58,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">About</a>
+              <RouterLink class="link-hover nav-link fw-semibold fs-6" to="/about"
+                >About</RouterLink
+              >
             </li>
             <li class="nav-item d-lg-none">
               <a class="link-hover nav-link fw-semibold fs-6" href="#">FAQ</a>
