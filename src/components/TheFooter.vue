@@ -7,8 +7,10 @@
         /></a>
         <ul class="footer-nav list-unstyled d-none d-md-flex m-0">
           <li>
-            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
-              >FAQ</a
+            <RouterLink
+              class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6"
+              to="/faq"
+              >FAQ</RouterLink
             >
           </li>
           <li>
@@ -30,7 +32,7 @@
       </div>
       <div class="d-flex justify-center justify-content-between align-items-center">
         <ul class="list-unstyled">
-          <li>Email : wavo9827@carpento.com</li>
+          <li>Email : support@apexrun.com.tw</li>
           <li>Customer Service : 9:00 AM - 5:00 PM | Monday to Friday</li>
           <li>No. 123, Xingbei Rd., Wenshan District, Taipei City, Taiwan</li>
         </ul>

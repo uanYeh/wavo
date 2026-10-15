@@ -3,11 +3,11 @@
   <div class="container-xl py-3">
     <TheBreadcrumb />
     <main class="mb-4 mb-lg-6">
-      <img :src="aboutBanner" class="img-fluid w-100 mb-6" />
+      <img :src="aboutBanner" class="img-fluid w-100 mb-2 mb-lg-6" />
       <div class="container-lg position-relative">
         <article class="article-content">
           <section class="mb-4 mb-lg-6">
-            <h3 class="fw-bold h1 mb-4">Our Story</h3>
+            <h3 class="fw-bold h1 mb-2 mb-lg-4">Our Story</h3>
             <h4 class="fw-bold mb-3">It all started in the coastal city of Tainan, Taiwan...</h4>
             <h4 class="fw-bold mb-3">
               At APEXRUN, our passion for sports runs as deep as the ocean, and we strive every day

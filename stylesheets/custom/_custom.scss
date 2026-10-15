@@ -29,13 +29,15 @@
   background-color: $primary;
   color: #fff;
   text-decoration: none;
+  position: sticky;
+  z-index: 2;
 
   @include media-breakpoint-up(md) {
     color: #1a1a1a;
     position: absolute;
     bottom: 1px;
     right: 0px;
-    padding: 6px 4px;
+    padding: 6px 8px;
     border-radius: 50%;
     display: inline;
     z-index: 2;
@@ -252,12 +254,13 @@
 }
 
 // article-content
-.article-content {
+.article-content,
+.qa-content {
   max-width: 1024px;
-  margin: 0 auto 230px auto;
+  margin: 0 auto 0px auto;
 
   @include media-breakpoint-up(md) {
-    margin-bottom: 230px;
+    margin-bottom: 20px;
   }
 }
 .sportPeoplePhoto {
@@ -269,4 +272,34 @@
     right: 300px;
     z-index: 1;
   }
+}
+
+//faqView
+.accordion-button {
+  position: relative;
+
+  &::before {
+    content: "Q";
+    font-family: "Georgia", serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $primary;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+}
+
+.accordion-button {
+  border-radius: 0 !important;
 }
