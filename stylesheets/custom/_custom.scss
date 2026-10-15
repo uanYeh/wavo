@@ -322,14 +322,19 @@
 
 //delivery
 .delivery-panel {
-  position: relative;
-
+  position: unset;
   h5 {
-    position: absolute;
-    top: -4px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $white;
-    padding: 4px;
+    position: unset;
+  }
+  @include media-breakpoint-up(md) {
+    position: relative;
+    h5 {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $white;
+      padding: 4px;
+    }
   }
 }

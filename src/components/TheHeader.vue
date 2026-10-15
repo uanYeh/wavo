@@ -71,10 +71,12 @@
               >
             </li>
             <li class="nav-item d-lg-none">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">Return</a>
+              <a class="link-hover nav-link fw-semibold fs-6" to="/return">Return</a>
             </li>
             <li class="nav-item d-lg-none">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">My favorite</a>
+              <RouterLink class="link-hover nav-link fw-semibold fs-6" href="#"
+                >My favorite</RouterLink
+              >
             </li>
           </ul>
         </div>

@@ -21,8 +21,10 @@
             >
           </li>
           <li>
-            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
-              >Return</a
+            <RouterLink
+              class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6"
+              to="/return"
+              >Return</RouterLink
             >
           </li>
           <li>
