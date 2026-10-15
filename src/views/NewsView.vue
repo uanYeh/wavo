@@ -4,11 +4,15 @@
     <TheBreadcrumb />
     <h2 class="text-center mb-3 mb-lg-4 fw-bold">News</h2>
     <main class="mb-4 mb-lg-6">
-      <div class="row g-4 m-4 mb-lg-6">
-        <div class="col-12 col-md-6 col-lg-4" v-for="item in newsList" :key="item.id">
-          <div class="news-card card border-0 rounded-0 position-relative">
+      <div class="row mx-0 gx-0 g-2 g-lg-4 mb-lg-6 align-items-stretch">
+        <div
+          class="col-12 col-md-6 col-lg-4 align-items-stretch"
+          v-for="item in newsList"
+          :key="item.id"
+        >
+          <div class="news-card card border-0 rounded-0 position-relative h-100">
             <img :src="item.imageUrl" class="rounded-0 img-fluid mb-0" :alt="item.title" />
-            <div class="card-body p-1 pt-2 p-3 pb-4">
+            <div class="card-body px-1 p-md-2 p-lg-3 pt-2 d-flex flex-column">
               <p class="text-muted fs-7 mb-1">
                 <i class="bi bi-calendar-week me-1"></i>{{ item.date }}
               </p>
@@ -16,7 +20,7 @@
               <p class="card-text fs-6 fw-medium content-truncate mb-4">{{ item.text }}</p>
               <RouterLink
                 :to="`/news/${item.id}`"
-                class="stretched-link d-block text-end fs-6 fw-semibold link-dark"
+                class="stretched-link d-block text-end fs-6 fw-semibold link-dark mt-auto"
                 >Read more</RouterLink
               >
             </div>

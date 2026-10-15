@@ -3,7 +3,7 @@
   <div class="container-xl py-3">
     <TheBreadcrumb />
 
-    <div class="border p-4 mb-4 mx-2">
+    <div class="border p-4 mb-4 mx-0 mx-lg-2">
       <h3 class="fw-bold">ALL</h3>
       <p class="fs-6">
         Explore our complete range of sports products and equipment now! Decathlon Taiwan offers
@@ -11,7 +11,7 @@
         fitness. Shop now!
       </p>
     </div>
-    <div class="row px-3">
+    <div class="row mx-0 gx-0 px-0 px-lg-3">
       <!-- 左側篩選 -->
 
       <aside class="col-lg-2 mb-4 mb-lg-0">
@@ -53,10 +53,12 @@
 
       <!-- 右側商品列表 -->
       <main class="products col-lg-10 mb-4 px-lg-0">
-        <div class="d-flex justify-content-between align-items-center mb-3">
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-md-center mb-3"
+        >
           <span>41 items</span>
           <div class="d-flex justify-content-center align-items-center">
-            <span class="mx-2">Sort by:</span>
+            <span class="me-2">Sort by:</span>
             <select class="form-select w-auto rounded-0">
               <option selected>select</option>
               <option value="price-asc">Price: Low to High</option>
@@ -66,9 +68,11 @@
             </select>
           </div>
         </div>
-        <div class="row px-0 g-3 gy-4 mb-4 mb-lg-6">
-          <div class="col-6 col-md-4 col-lg-3" v-for="item in products" :key="item.id">
-            <ProductCard :product="item" />
+        <div class="">
+          <div class="row mx-n3 mb-4 mb-lg-6 gx-3 gy-1 gy-lg-3">
+            <div class="col-6 col-md-4 col-lg-3" v-for="item in products" :key="item.id">
+              <ProductCard :product="item" />
+            </div>
           </div>
         </div>
         <ThePagination />

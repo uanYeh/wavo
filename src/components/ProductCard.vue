@@ -16,13 +16,13 @@
       </p>
       <p class="card-brands mb-2 fs-7 fw-semibold">{{ product.category }}</p>
       <a
-        class="icon-cart text-end d-flex justify-content-center align-items-center d-lg-inline-block z-2 bottom-0 end-0 text-decoration-none"
+        class="icon-cart"
         data-bs-toggle="offcanvas"
-        href="#offcanvasExample"
+        href="#CartOffcanvas"
         role="button"
-        aria-controls="offcanvasExample"
+        aria-controls="CartOffcanvas"
       >
-        <i class="bi bi-cart-plus-fill fs-4"></i><span class="d-block d-lg-none">add to cart</span>
+        <i class="bi bi-cart-plus-fill fs-4"></i><span class="d-block d-md-none">add to cart</span>
       </a>
       <RouterLink :to="`/products/${product.id}`" class="stretched-link z-1"></RouterLink>
     </div>

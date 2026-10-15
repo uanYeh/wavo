@@ -3,9 +3,9 @@
     <a
       class="position-relative mx-3"
       data-bs-toggle="offcanvas"
-      href="#offcanvasExample"
+      href="#CartOffcanvas"
       role="button"
-      aria-controls="offcanvasExample"
+      aria-controls="CartOffcanvas"
     >
       <i class="bi bi-bag fs-4 text-dark"></i>
       <span
@@ -19,11 +19,11 @@
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
-      id="offcanvasExample"
-      aria-labelledby="offcanvasExampleLabel"
+      id="CartOffcanvas"
+      aria-labelledby="CartOffcanvasLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart (1 items)</h5>
+        <h5 class="offcanvas-title" id="CartOffcanvasLabel">Cart (1 items)</h5>
         <button
           type="button"
           class="btn-close"

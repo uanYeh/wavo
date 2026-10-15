@@ -32,7 +32,7 @@
               >
                 Product
               </a>
-              <ul class="dropdown-menu rounded-0">
+              <ul class="dropdown-menu rounded-0 mb-3 mb-lg-0">
                 <li><RouterLink class="dropdown-item" to="/products">All Products</RouterLink></li>
                 <li>
                   <RouterLink class="dropdown-item" to="/products?category=shoes">Shoes</RouterLink>
@@ -62,6 +62,15 @@
             </li>
             <li class="nav-item d-lg-none">
               <a class="link-hover nav-link fw-semibold fs-6" href="#">FAQ</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="link-hover nav-link fw-semibold fs-6" href="#">Delivery</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="link-hover nav-link fw-semibold fs-6" href="#">Return</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="link-hover nav-link fw-semibold fs-6" href="#">My favorite</a>
             </li>
           </ul>
         </div>

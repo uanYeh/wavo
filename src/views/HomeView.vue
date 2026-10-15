@@ -10,7 +10,7 @@
       backgroundRepeat: 'no-repeat',
     }"
   >
-    <div class="container-lg">
+    <div class="container-xl">
       <div class="row">
         <div class="col-md-6">
           <div class="d-flex flex-column">
@@ -28,7 +28,7 @@
       </div>
     </div>
   </section>
-  <section class="container-lg g-3 mb-5 mb-lg-8 section-products">
+  <section class="container-xl g-3 mb-5 mb-lg-8 section-products">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold">Clearing</h2>
     <Swiper v-bind="swiperOptions">
       <SwiperSlide v-for="item in products" :key="item.id">
@@ -37,7 +37,7 @@
     </Swiper>
   </section>
   <section class="section-feature bg-light py-5 py-md-8 mb-5 mb-lg-6">
-    <div class="container-lg col-12 col-lg-8">
+    <div class="container-xl col-12 col-lg-8">
       <Swiper v-bind="featureOptions">
         <SwiperSlide>
           <div class="text-center">
@@ -159,7 +159,7 @@
   <!-- <section class="section-ad mb-8">
     <img :src="adImg" class="bg-cover w-100" />
   </section> -->
-  <section class="container-lg section-newproduct g-3 mb-5 mb-lg-8">
+  <section class="container-xl section-newproduct g-3 mb-5 mb-lg-8">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold d-md-none">News Product</h2>
     <div class="d-flex gap-0 gap-md-3">
       <div class="area-img flex-fill position-relative">
@@ -177,7 +177,7 @@
       </div>
     </div>
   </section>
-  <section class="container-lg g-3 mb-5 mb-lg-8">
+  <section class="container-xl g-3 mb-5 mb-lg-8">
     <h2 class="text-center mb-4 mb-lg-5 fw-bold">Most Popular</h2>
     <Swiper v-bind="swiperOptions">
       <SwiperSlide v-for="item in products" :key="item.id">
@@ -186,7 +186,7 @@
     </Swiper>
   </section>
   <section class="bg-light py-5 py-lg-8 mb-5 mb-lg-8">
-    <div class="container-lg">
+    <div class="container-xl">
       <h2 class="text-center mb-3 mb-lg-5 fw-bold">Ratings & Reviews</h2>
       <Swiper v-bind="reviewsOptions">
         <SwiperSlide v-for="review in reviews" :key="review.id">
@@ -216,7 +216,7 @@
     </div>
   </section>
   <section class="mb-5 mb-lg-8">
-    <div class="container-lg col-12 col-md-8">
+    <div class="container-xl col-12 col-md-8">
       <div class="text-center">
         <h2 class="text-center mb-4 mb-lg-5 fw-bold">Selected Brands</h2>
         <div class="brands">
@@ -248,7 +248,7 @@
       backgroundRepeat: 'no-repeat',
     }"
   >
-    <div class="container-lg">
+    <div class="container-xl">
       <div class="row">
         <div class="col-lg-7"></div>
         <div class="col-lg-5">

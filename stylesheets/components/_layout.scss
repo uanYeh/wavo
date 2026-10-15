@@ -7,14 +7,86 @@ a.link-more {
   letter-spacing: 0.03em;
 }
 
-.dropdown-toggle::after {
-  display: none;
-}
 footer {
   .border-light {
     border-color: #ffffff33 !important;
   }
 }
+
+//navbar
+.navbar-nav {
+  @include media-breakpoint-down(lg) {
+    a.dropdown-item {
+      padding: 2px 4px;
+    }
+    li.nav-item {
+      padding: 0px 12px;
+      border-bottom: 1px dotted #333;
+    }
+  }
+  //桌機:沒有，手機:有箭頭icon
+  .dropdown-toggle {
+    &::after {
+      border: none;
+      transition: transform 0.3s;
+      margin-left: auto;
+    }
+
+    &.show::after {
+      transform: rotate(180deg);
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        font-family: "bootstrap-icons";
+        content: "\f282";
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  //桌機的hover效果
+  a.link-hover {
+    position: relative;
+    text-decoration: none;
+
+    @include media-breakpoint-up(lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition:
+          width 0.3s ease,
+          left 0.3s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+//桌機 hover的時後選項出現
+@include media-breakpoint-up(lg) {
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+//seacrh
 .search-container {
   border-radius: 40px;
   background-color: #efefef;
@@ -94,28 +166,6 @@ footer {
   }
   @include media-breakpoint-up(lg) {
     width: 80%;
-  }
-}
-a.link-hover {
-  position: relative;
-  text-decoration: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition:
-      width 0.3s ease,
-      left 0.3s ease;
-  }
-
-  &:hover::before {
-    width: 100%;
-    left: 0;
   }
 }
 
@@ -208,5 +258,38 @@ body {
 @include media-breakpoint-up(lg) {
   .col-custom5 {
     width: 20%;
+  }
+}
+
+//
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   }
 }

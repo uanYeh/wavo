@@ -72,16 +72,16 @@
           </button>
         </div>
       </div>
-      <div class="">
+      <div>
         <!-- 頁籤 -->
         <ul
-          class="nav nav-tabs d-flex justify-content-center justify-content-md-center"
+          class="nav nav-tabs d-flex flex-nowrap justify-content-center justify-content-md-center align-items-stretch"
           id="productTab"
           role="tablist"
         >
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link active fw-bold fs-6 rounded-0 border me-2 border-bottom-0 px-6 py-0 py-lg-2"
+              class="nav-link active fw-bold fs-6 rounded-0 border me-1 me-md-2 border-bottom-0 px-3 px-md-6 py-2"
               data-bs-toggle="tab"
               data-bs-target="#details"
               type="button"
@@ -92,7 +92,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link fs-6 rounded-0 border me-2 border-bottom-0 px-6 py-0 py-lg-2"
+              class="nav-link fw-bold fs-6 rounded-0 border me-1 me-md-2 border-bottom-0 px-3 px-md-6 py-2"
               data-bs-toggle="tab"
               data-bs-target="#size"
               type="button"
@@ -103,7 +103,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link fs-6 rounded-0 border me-2 border-bottom-0 px-6 py-0 py-lg-2"
+              class="nav-link fw-bold fs-6 rounded-0 border me-1 me-md-2 border-bottom-0 px-3 px-md-6 py-2"
               data-bs-toggle="tab"
               data-bs-target="#material"
               type="button"
