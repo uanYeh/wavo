@@ -14,8 +14,10 @@
             >
           </li>
           <li>
-            <a class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6" href=""
-              >Delivery</a
+            <RouterLink
+              class="link-hover link-light text-decoration-none p-2 fw-semibold fs-6"
+              to="/delivery"
+              >Delivery</RouterLink
             >
           </li>
           <li>

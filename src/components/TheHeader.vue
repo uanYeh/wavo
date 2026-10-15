@@ -66,7 +66,9 @@
               <RouterLink class="link-hover nav-link fw-semibold fs-6" to="/faq">FAQ </RouterLink>
             </li>
             <li class="nav-item d-lg-none">
-              <a class="link-hover nav-link fw-semibold fs-6" href="#">Delivery</a>
+              <RouterLink class="link-hover nav-link fw-semibold fs-6" to="/delivery"
+                >Delivery</RouterLink
+              >
             </li>
             <li class="nav-item d-lg-none">
               <a class="link-hover nav-link fw-semibold fs-6" href="#">Return</a>

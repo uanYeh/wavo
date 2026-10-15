@@ -2,7 +2,7 @@
   <TheHeader />
   <div class="container-xl py-3">
     <TheBreadcrumb />
-    <h2 class="text-center mb-3 mb-lg-4 fw-bold">News</h2>
+    <h2 class="section-title text-center mb-3 mb-lg-4 fw-bold">News</h2>
     <main class="mb-4 mb-lg-6">
       <div class="row mx-0 gx-0 g-2 g-lg-4 mb-lg-6 align-items-stretch">
         <div

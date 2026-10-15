@@ -303,3 +303,33 @@
 .accordion-button {
   border-radius: 0 !important;
 }
+
+//section-title
+.section-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #dee2e6;
+  }
+}
+
+//delivery
+.delivery-panel {
+  position: relative;
+
+  h5 {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    padding: 4px;
+  }
+}
