@@ -6,9 +6,9 @@
     <div class="border p-4 mb-4 mx-0 mx-lg-2">
       <h3 class="fw-bold">ALL</h3>
       <p class="fs-6">
-        Explore our complete range of sports products and equipment now! Decathlon Taiwan offers
-        thousands of items across more than 80 sports, including hiking, camping, running, and
-        fitness. Shop now!
+        Discover performance gear built for every sport. APEXRUN brings you premium running shoes,
+        apparel, and accessories — designed to keep you moving further, faster, and stronger. Shop
+        Now
       </p>
     </div>
     <div class="row mx-0 gx-0 px-0 px-lg-3">

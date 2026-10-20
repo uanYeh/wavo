@@ -76,7 +76,10 @@
               aria-label="Close"
             ></button>
             <div class="bg-primary text-white text-center p-5">
-              <p class="fs-6 text-uppercase fw-semibold mb-2">Limited Offer</p>
+              <p class="fs-6 text-uppercase fw-semibold mb-2">
+                Anniversary Sale — Oct 9 to Oct 18 <br />
+              </p>
+              <span>Spend NT$2,500+ and use code at checkout for 20% off.</span>
               <h2 class="display-4 fw-bold mb-2">20% OFF</h2>
               <p class="mb-4">Use code: <span class="fw-bold text-warning">SPORT20</span></p>
               <button
@@ -103,13 +106,13 @@ export default {
     };
   },
   mounted() {
-    const seen = localStorage.getItem("couponSeen");
-    if (!seen) {
-      const modal = new Modal(this.$refs.couponModal);
-      setTimeout(() => {
-        modal.show();
-      }, 500);
-    }
+    // const seen = localStorage.getItem("couponSeen");
+    // if (!seen) {
+    const modal = new Modal(this.$refs.couponModal);
+    setTimeout(() => {
+      modal.show();
+    }, 500);
+    // }
   },
   methods: {
     copyCoupon() {

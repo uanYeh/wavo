@@ -1,40 +1,45 @@
 <template>
   <TheCouponModal />
   <TheHeader />
-  <section
-    class="banner d-flex align-items-center mb-5 mb-lg-8"
-    :style="{
-      backgroundImage: `url(${bannerImg})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'top',
-      backgroundRepeat: 'no-repeat',
-    }"
-  >
-    <div class="container-xl">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="d-flex flex-column">
-            <h1 class="text-light fw-bolder fs-3 fs-md-1">Enjoy your every stride</h1>
-            <p class="text-light fs-6 fs-md-5 content-truncate fw-light">
-              Professional running gear, made to help you push your limits with every step.
-            </p>
-            <a
-              class="btn btn-primary rounded-0 align-self-start py-1 py-md-2 px-4 px-md-6 fs-6 fs-md-5"
-              >Shop Now</a
-            >
+  <div data-aos="fade-down" data-aos-delay="200">
+    <section
+      class="banner d-flex align-items-center mb-5 mb-lg-8"
+      ref="banner"
+      :style="{
+        backgroundImage: `url(${bannerImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
+      }"
+    >
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="d-flex flex-column">
+              <h1 class="text-light fw-bolder fs-3 fs-md-1">Enjoy your every stride</h1>
+              <p class="text-light fs-6 fs-md-5 content-truncate fw-light">
+                Professional running gear, made to help you push your limits with every step.
+              </p>
+              <a
+                class="btn btn-warning rounded-0 align-self-start py-1 py-md-2 px-4 px-md-6 fs-6 fs-md-5"
+                >Shop Now</a
+              >
+            </div>
           </div>
+          <div class="col-md-6"></div>
         </div>
-        <div class="col-md-6"></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <section class="container-xl g-3 mb-5 mb-lg-8 section-products">
-    <h2 class="text-center mb-4 mb-lg-5 fw-bold">Clearing</h2>
-    <Swiper v-bind="swiperOptions">
-      <SwiperSlide v-for="item in products" :key="item.id">
-        <ProductCard :product="item" />
-      </SwiperSlide>
-    </Swiper>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-center mb-4 mb-lg-5 fw-bold">Clearing</h2>
+      <Swiper v-bind="swiperOptions">
+        <SwiperSlide v-for="item in products" :key="item.id">
+          <ProductCard :product="item" />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   </section>
   <section class="section-feature bg-light py-5 py-md-8 mb-5 mb-lg-6">
     <div class="container-xl col-12 col-lg-8">
@@ -160,30 +165,34 @@
     <img :src="adImg" class="bg-cover w-100" />
   </section> -->
   <section class="container-xl section-newproduct g-3 mb-5 mb-lg-8">
-    <h2 class="text-center mb-4 mb-lg-5 fw-bold d-md-none">News Product</h2>
-    <div class="d-flex gap-0 gap-md-3">
-      <div class="area-img flex-fill position-relative">
-        <img :src="areaImg" />
-        <div class="position-absolute top-0 end-50 fs-3 p-3 pe-0 fw-bolder text-white z-2">
-          News Product
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-center mb-4 mb-lg-5 fw-bold d-md-none">News Product</h2>
+      <div class="newsProduct d-flex">
+        <div class="area-img flex-fill position-relative">
+          <img :src="areaImg" />
+          <div class="position-absolute top-0 end-50 fs-3 p-3 pe-0 fw-bolder text-white z-2">
+            News Product
+          </div>
         </div>
-      </div>
-      <div class="newproduct-content">
-        <Swiper v-bind="swiper2Options">
-          <SwiperSlide v-for="item in products" :key="item.id">
-            <ProductCard :product="item" />
-          </SwiperSlide>
-        </Swiper>
+        <div class="newproduct-content">
+          <Swiper v-bind="swiper2Options">
+            <SwiperSlide v-for="item in products" :key="item.id">
+              <ProductCard :product="item" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
     </div>
   </section>
   <section class="container-xl g-3 mb-5 mb-lg-8">
-    <h2 class="text-center mb-4 mb-lg-5 fw-bold">Most Popular</h2>
-    <Swiper v-bind="swiperOptions">
-      <SwiperSlide v-for="item in products" :key="item.id">
-        <ProductCard :product="item" />
-      </SwiperSlide>
-    </Swiper>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-center mb-4 mb-lg-5 fw-bold">Most Popular</h2>
+      <Swiper v-bind="swiperOptions">
+        <SwiperSlide v-for="item in products" :key="item.id">
+          <ProductCard :product="item" />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   </section>
   <section class="bg-light py-5 py-lg-8 mb-5 mb-lg-8">
     <div class="container-xl">
@@ -439,6 +448,24 @@ export default {
           category: "Accessories",
           imageUrl: photoImg,
         },
+        {
+          id: 7,
+          title: "Breathable UV Protection Running Cap",
+          text: "Quick-dry, UV-blocking fabric shields you from the sun while keeping you cool and comfortable during outdoor workouts in any weather condition.",
+          price: 850,
+          origin_price: 1200,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
+        {
+          id: 8,
+          title: "Breathable UV Protection Running Cap",
+          text: "Quick-dry, UV-blocking fabric shields you from the sun while keeping you cool and comfortable during outdoor workouts in any weather condition.",
+          price: 850,
+          origin_price: 1200,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
       ],
       reviews: [
         {
@@ -493,22 +520,34 @@ export default {
       //product
       swiperOptions: {
         modules: [Navigation],
-        navigation: true,
-        slidesPerView: 2,
-        spaceBetween: 16,
+        navigation: false,
+        slidesPerView: 2.1,
+        spaceBetween: 8,
+        centeredSlidesBounds: true,
+        slidesOffsetBefore: -270,
+        loop: true,
         breakpoints: {
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
+          375: { slidesPerView: 2.3, lidesOffsetBefore: 0, spaceBetween: 8 },
+          576: { slidesPerView: 2.3, slidesOffsetBefore: 0, spaceBetween: 16 },
+          768: { slidesPerView: 3.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          992: { slidesPerView: 3.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          1200: { slidesPerView: 5.5, slidesOffsetBefore: -122, spaceBetween: 16 },
         },
       },
       swiper2Options: {
         modules: [Navigation],
-        navigation: true,
-        slidesPerView: 2,
-        spaceBetween: 16,
+        navigation: false,
+        slidesPerView: 2.1,
+        spaceBetween: 8,
+        centeredSlidesBounds: true,
+        slidesOffsetBefore: -270,
+        loop: true,
         breakpoints: {
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 4 },
+          375: { slidesPerView: 2.3, slidesOffsetBefore: 0, spaceBetween: 8 },
+          576: { slidesPerView: 2.3, slidesOffsetBefore: 0, spaceBetween: 8 },
+          768: { slidesPerView: 3.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          992: { slidesPerView: 2.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          1200: { slidesPerView: 4, slidesOffsetBefore: 0, spaceBetween: 16 },
         },
       },
       reviewsOptions: {
@@ -539,6 +578,21 @@ export default {
         },
       },
     };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleParallax);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleParallax);
+  },
+  methods: {
+    handleParallax() {
+      const scrollY = window.scrollY;
+      this.$refs.banner.style.backgroundPositionY = `${scrollY * 0.5}px`;
+    },
+  },
+  created() {
+    console.log(import.meta.env.VITE_APP_API, import.meta.env.VITE_APP_PATH);
   },
 };
 </script>

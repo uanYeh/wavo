@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/front/HomeView.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -12,42 +12,62 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: () => import("../views/AboutView.vue"),
+      component: () => import("../views/front/AboutView.vue"),
     },
     {
       path: "/products",
       name: "products",
-      component: () => import("../views/ProductView.vue"),
+      component: () => import("../views/front/ProductView.vue"),
     },
     {
       path: "/products/:id",
       name: "product",
-      component: () => import("@/views/ProductDetailView.vue"),
+      component: () => import("@/views/front/ProductDetailView.vue"),
     },
     {
       path: "/news",
       name: "news",
-      component: () => import("@/views/NewsView.vue"),
+      component: () => import("@/views/front/NewsView.vue"),
     },
     {
       path: "/about",
       name: "about",
-      component: () => import("@/views/AboutView.vue"),
+      component: () => import("@/views/front/AboutView.vue"),
     },
     {
       path: "/faq",
       name: "faq",
-      component: () => import("@/views/FaqView.vue"),
+      component: () => import("@/views/front/FaqView.vue"),
     },
     {
       path: "/delivery",
       name: "delivery",
-      component: () => import("@/views/DeliveryView.vue"),
+      component: () => import("@/views/front/DeliveryView.vue"),
     },
     {
       path: "/return",
       name: "return",
-      component: () => import("@/views/ReturnView.vue"),
+      component: () => import("@/views/front/ReturnView.vue"),
+    },
+    {
+      path: "/cart",
+      name: "cart",
+      component: () => import("@/views/front/CartView.vue"),
+    },
+    {
+      path: "/checkout",
+      name: "checkout",
+      component: () => import("@/views/front/CheckoutView.vue"),
+    },
+    {
+      path: "/order",
+      name: "order",
+      component: () => import("@/views/front/OrderView.vue"),
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: () => import("@/views/front/TestView.vue"),
     },
   ],
 });

@@ -2,7 +2,11 @@
   <section class="couponsBar text-center bg-warning text-dark">
     <p class="mb-0 py-2 fs-6 fw-semibold">
       <i class="bi bi-tags-fill"></i>
-      GET 20% OFF SPECIAL SALES IN {{ pad(hours) }}H {{ pad(minutes) }}M {{ pad(seconds) }}S
+      Spend NT$2,500+ and use code at checkout for 20% off.
+      <span class="bg-dark text-warning p-1 me-1 rounded-1">{{ pad(days) }}d</span>:
+      <span class="bg-dark text-warning p-1 me-1 rounded-1">{{ pad(hours) }}</span
+      >: <span class="bg-dark text-warning p-1 me-1 rounded-1">{{ pad(minutes) }} </span>:
+      <span class="bg-dark text-warning p-1 me-1 rounded-1">{{ pad(seconds) }}</span>
       <span class="text-primary p-1 ms-1">Use code:SPORT20</span>
     </p>
   </section>
@@ -23,7 +27,7 @@ export default {
     };
   },
   mounted() {
-    const deadline = new Date("2026-12-31T23:59:59");
+    const deadline = new Date("2026-10-30T23:59:59");
     this.timer = setInterval(() => {
       const now = new Date();
       const diff = deadline - now;
@@ -39,6 +43,9 @@ export default {
     clearInterval(this.timer);
   },
   computed: {
+    days() {
+      return Math.floor(this.timeLeft / 1000 / 60 / 60 / 24);
+    },
     hours() {
       return Math.floor((this.timeLeft / 1000 / 60 / 60) % 24);
     },

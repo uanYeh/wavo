@@ -7,15 +7,23 @@
         <div class="col-12 col-md-6 col-lg-8">
           <div class="row g-2">
             <div class="col-12 col-lg-6" v-for="(img, index) in visibleImages" :key="index">
-              <img :src="img" class="w-100" />
+              <a :href="img" class="glightbox" data-gallery="product-gallery">
+                <img :src="img" class="w-100" style="cursor: pointer" />
+              </a>
             </div>
           </div>
+          <!-- 隱藏的其餘圖片，只給 lightbox 用 -->
+          <template v-for="(img, index) in images.slice(4)" :key="'hidden-' + index">
+            <a :href="img" class="glightbox d-none" data-gallery="product-gallery"></a>
+          </template>
+
+          <!-- 超過4張才顯示按鈕 -->
           <button
-            v-if="images.length > 2"
+            v-if="images.length > 4"
             class="btn border rounded-0 w-100 mt-3 mb-4"
-            @click="toggleImages"
+            @click="openLightboxAt(4)"
           >
-            {{ showCount >= images.length ? "Show Less" : "Load More" }}
+            查看更多 ({{ images.length - 4 }})
           </button>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
@@ -166,6 +174,8 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.css";
 
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
@@ -189,9 +199,10 @@ export default {
   },
   data() {
     return {
-      showCount: 1, // 手機預設1
       qty: 1,
       photoImg,
+      showCount: 4,
+      lightbox: null,
       product: {
         id: 1,
         title: "Ultra Boost Running Shoes Pro Edition",
@@ -202,7 +213,6 @@ export default {
         imageUrl: photoImg,
       },
       images: [photoImg, photoImg, photoImg, photoImg, photoImg, photoImg],
-      showCount: 4,
       recentProducts: [
         {
           id: 1,
@@ -258,47 +268,51 @@ export default {
           category: "Accessories",
           imageUrl: photoImg,
         },
+        {
+          id: 7,
+          title: "Breathable UV Protection Running Cap",
+          text: "Quick-dry, UV-blocking fabric shields you from the sun while keeping you cool and comfortable during outdoor workouts in any weather condition.",
+          price: 850,
+          origin_price: 1200,
+          category: "Accessories",
+          imageUrl: photoImg,
+        },
       ],
       swiperOptions: {
         modules: [Navigation],
-        navigation: true,
-        slidesPerView: 2,
-        spaceBetween: 16,
+        navigation: false,
+        slidesPerView: 2.1,
+        spaceBetween: 8,
+        centeredSlidesBounds: true,
+        slidesOffsetBefore: -270,
+        loop: true,
         breakpoints: {
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
+          375: { slidesPerView: 2.3, slidesOffsetBefore: 0, spaceBetween: 8 },
+          576: { slidesPerView: 2.3, slidesOffsetBefore: 0, spaceBetween: 16 },
+          768: { slidesPerView: 3.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          992: { slidesPerView: 3.5, slidesOffsetBefore: 0, spaceBetween: 16 },
+          1200: { slidesPerView: 5.5, slidesOffsetBefore: -122, spaceBetween: 16 },
         },
       },
     };
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.lightbox = GLightbox({ selector: ".glightbox" });
+    });
+  },
+  beforeUnmount() {},
+  methods: {
+    openLightboxAt(index) {
+      if (this.lightbox) {
+        this.lightbox.openAt(index);
+      }
+    },
+    // updateShowCount 不再控制 showCount，直接拿掉或留著備用
+  },
   computed: {
     visibleImages() {
-      return this.images.slice(0, this.showCount);
-    },
-  },
-  mounted() {
-    this.updateShowCount();
-    window.addEventListener("resize", this.updateShowCount);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.updateShowCount);
-  },
-  methods: {
-    updateShowCount() {
-      if (window.innerWidth >= 992) {
-        this.showCount = 4; // lg
-      } else if (window.innerWidth >= 768) {
-        this.showCount = 2; // md
-      } else {
-        this.showCount = 1; // 手機
-      }
-    },
-    toggleImages() {
-      if (this.showCount >= this.images.length) {
-        this.updateShowCount(); // 收起回預設
-      } else {
-        this.showCount = this.images.length; // 全展開
-      }
+      return this.images.slice(0, this.showCount); // showCount = 4，應該要有4張
     },
   },
 };

@@ -14,6 +14,7 @@
         aria-label="Close"
       ></button>
     </div>
+    <hr />
     <div class="offcanvas-body">
       <div>
         Some text as placeholder. In real life you can have the elements you have chosen. Like,

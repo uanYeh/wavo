@@ -37,9 +37,11 @@
     position: absolute;
     bottom: 1px;
     right: 0px;
+    width: 50px;
+    height: 50px;
     padding: 6px 8px;
     border-radius: 50%;
-    display: inline;
+    display: inline-flex;
     z-index: 2;
     background-color: #fff;
     &:hover {
@@ -66,12 +68,7 @@
 }
 .content-truncate {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
-}
-.truncate-3 {
-  -webkit-line-clamp: 3;
 }
 
 .product-card {
@@ -82,11 +79,61 @@
 .section-feature i {
   font-size: 4.5rem;
 }
+
+//特別的產品
+$area-img-width-sm: percentage(1 / 1); // = 28.571%
+$area-img-width-md: percentage(1 / 3.5); // = 28.571%
+$area-img-width-lg: percentage(1 / 3.5); // = 25%
+$area-img-width-xl: percentage(1 / 5); // = 25%
+
+.newsProduct {
+  .area-img {
+    margin-right: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 0px;
+      display: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: $area-img-width-lg;
+      margin-right: 16px;
+      display: block;
+    }
+    @include media-breakpoint-up(xl) {
+      width: $area-img-width-xl;
+      margin-right: 16px;
+      display: block;
+    }
+  }
+  .newproduct-content {
+    width: 100%; // 手機全寬
+    @include media-breakpoint-up(md) {
+      width: $area-img-width-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: calc(100% - #{$area-img-width-lg});
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: calc(100% - #{$area-img-width-xl});
+    }
+  }
+}
+
 .area-img img {
   width: 100%;
 }
+
 .card-text {
   color: $secdary-color;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .section-contact {
   background: url("../assets/images/footerBg.jpg") center center;
@@ -275,33 +322,35 @@
 }
 
 //faqView
-.accordion-button {
-  position: relative;
+.qa-content {
+  .accordion-button {
+    position: relative;
 
-  &::before {
-    content: "Q";
-    font-family: "Georgia", serif;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $primary;
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-right: 8px;
-    flex-shrink: 0;
+    &::before {
+      content: "Q";
+      font-family: "Georgia", serif;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $primary;
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
   }
-}
 
-.accordion-item {
-  border-radius: 0 !important;
-}
+  .accordion-item {
+    border-radius: 0 !important;
+  }
 
-.accordion-button {
-  border-radius: 0 !important;
+  .accordion-button {
+    border-radius: 0 !important;
+  }
 }
 
 //section-title
@@ -337,4 +386,61 @@
       padding: 4px;
     }
   }
+}
+//productView
+.product-img {
+  aspect-ratio: 390 / 336;
+  object-fit: cover;
+  width: 100%;
+}
+.product-more {
+  aspect-ratio: 390 / 336;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 8px;
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  span {
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
+
+//cartView
+.stepper {
+  position: relative;
+}
+.stepper:after {
+  background-color: #f0f0eb;
+  content: "";
+  height: 3px;
+  position: absolute;
+  top: calc(50% - 1px);
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: -1;
+}
+
+.cart-number {
+  width: 50px;
+  height: 50px;
+}
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cart-item-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
