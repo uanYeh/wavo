@@ -56,8 +56,8 @@
 <script>
 import newsImg from "@/assets/images/newsImg.jpg";
 
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
+import TheHeader from "@/components/front/TheHeader.vue";
+import TheFooter from "@/components/front/TheFooter.vue";
 import TheBreadcrumb from "@/components/ui/TheBreadcrumb.vue";
 import ThePagination from "@/components/ui/ThePagination.vue";
 

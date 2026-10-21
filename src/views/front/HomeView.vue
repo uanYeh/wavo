@@ -365,8 +365,8 @@ import icon03 from "@/assets/images/icon03.svg";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import TheHeader from "@/components/TheHeader.vue";
-import ProductCard from "@/components/ProductCard.vue";
+import TheHeader from "@/components/front/TheHeader.vue";
+import ProductCard from "@/components/front/ProductCard.vue";
 import TheCouponModal from "@/components/ui/TheCouponModal.vue";
 
 import "swiper/css";
